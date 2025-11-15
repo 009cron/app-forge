@@ -59,15 +59,29 @@ const ProductDetail = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background pb-24">
-      <header className="sticky top-0 bg-background/95 backdrop-blur-sm border-b border-border z-40 px-4 py-4">
-        <div className="max-w-md mx-auto flex items-center justify-between">
-          <Button variant="ghost" size="icon" onClick={() => navigate(-1)}>
-            <ArrowLeft className="w-6 h-6" />
-          </Button>
-          <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center">
-            <span className="text-sm">☕</span>
-          </div>
+    <div 
+      className="min-h-screen pb-24 relative"
+      style={{
+        backgroundImage: "url(/background.webp)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed"
+      }}
+    >
+      <div className="absolute inset-0 bg-white/60 backdrop-blur-sm" />
+      
+      <div className="relative z-10">
+        <header className="sticky top-0 bg-white/95 backdrop-blur-md border-b border-border z-40 px-4 py-4 shadow-soft">
+          <div className="max-w-md mx-auto flex items-center justify-between">
+            <Button variant="ghost" size="icon" onClick={() => navigate(-1)}>
+              <ArrowLeft className="w-6 h-6" />
+            </Button>
+            <img 
+              src="/logo-sudutkopi.jpg" 
+              alt="Sudut Kopi" 
+              className="h-10 w-auto object-contain"
+            />
           <Button variant="ghost" size="icon">
             <Heart className="w-6 h-6" />
           </Button>
@@ -172,8 +186,9 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
+      </div>
 
-      <div className="fixed bottom-0 left-0 right-0 bg-background border-t border-border p-4 z-50">
+      <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-border p-4 z-50 shadow-lg">
         <div className="max-w-md mx-auto flex items-center gap-4">
           <div className="flex items-center gap-3 bg-secondary rounded-xl p-2">
             <Button

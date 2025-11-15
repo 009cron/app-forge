@@ -13,7 +13,7 @@ export const BottomNav = () => {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-card border-t border-border z-50">
+    <nav className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-border z-50 shadow-lg">
       <div className="max-w-md mx-auto px-4">
         <div className="flex justify-around items-center h-16">
           {navItems.map((item) => {
