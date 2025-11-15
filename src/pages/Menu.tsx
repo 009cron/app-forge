@@ -43,13 +43,29 @@ const Menu = () => {
   const totalPrice = getTotalPrice();
 
   return (
-    <div className="min-h-screen bg-background pb-32">
-      <header className="sticky top-0 bg-background/95 backdrop-blur-sm border-b border-border z-40 px-4 py-4">
-        <div className="max-w-md mx-auto flex items-center justify-between mb-4">
-          <Button variant="ghost" size="icon" onClick={() => navigate(-1)}>
-            <ArrowLeft className="w-6 h-6" />
-          </Button>
-          <h1 className="text-xl font-bold text-foreground">Our Menu</h1>
+    <div 
+      className="min-h-screen pb-32 relative"
+      style={{
+        backgroundImage: "url(/background.webp)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed"
+      }}
+    >
+      <div className="absolute inset-0 bg-white/60 backdrop-blur-sm" />
+      
+      <div className="relative z-10">
+        <header className="sticky top-0 bg-white/95 backdrop-blur-md border-b border-border z-40 px-4 py-4 shadow-soft">
+          <div className="max-w-md mx-auto flex items-center justify-between mb-4">
+            <Button variant="ghost" size="icon" onClick={() => navigate(-1)}>
+              <ArrowLeft className="w-6 h-6" />
+            </Button>
+            <img 
+              src="/logo-sudutkopi.jpg" 
+              alt="Sudut Kopi" 
+              className="h-10 w-auto object-contain"
+            />
           <Button
             variant="ghost"
             size="icon"
@@ -101,6 +117,7 @@ const Menu = () => {
             />
           ))}
         </div>
+      </div>
       </div>
 
       {totalItems > 0 && (

@@ -24,25 +24,42 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background pb-20">
-      <header className="sticky top-0 bg-background/95 backdrop-blur-sm border-b border-border z-40 px-4 py-4">
-        <div className="max-w-md mx-auto flex items-center justify-between mb-4">
-          <Button variant="ghost" size="icon">
-            <Menu className="w-6 h-6" />
-          </Button>
-          <h1 className="text-xl font-bold text-primary">Sudut Kopi</h1>
-          <Button variant="ghost" size="icon">
-            <Bell className="w-6 h-6" />
-          </Button>
-        </div>
-        <div className="max-w-md mx-auto relative">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-          <Input
-            placeholder="Find your favorite coffee"
-            className="pl-12 h-12 bg-secondary border-0 rounded-xl"
-          />
-        </div>
-      </header>
+    <div 
+      className="min-h-screen pb-20 relative"
+      style={{
+        backgroundImage: "url(/background.webp)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed"
+      }}
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-white/60 backdrop-blur-sm" />
+      
+      <div className="relative z-10">
+        <header className="sticky top-0 bg-white/95 backdrop-blur-md border-b border-border z-40 px-4 py-4 shadow-soft">
+          <div className="max-w-md mx-auto flex items-center justify-between mb-4">
+            <Button variant="ghost" size="icon">
+              <Menu className="w-6 h-6" />
+            </Button>
+            <img 
+              src="/logo-sudutkopi.jpg" 
+              alt="Sudut Kopi" 
+              className="h-10 w-auto object-contain"
+            />
+            <Button variant="ghost" size="icon">
+              <Bell className="w-6 h-6" />
+            </Button>
+          </div>
+          <div className="max-w-md mx-auto relative">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+            <Input
+              placeholder="Find your favorite coffee"
+              className="pl-12 h-12 bg-secondary border-0 rounded-xl"
+            />
+          </div>
+        </header>
 
       <main className="max-w-md mx-auto px-4 py-6 space-y-8">
         <section className="flex gap-4 overflow-x-auto pb-2 -mx-4 px-4 scrollbar-hide">
@@ -109,6 +126,7 @@ const Home = () => {
           </div>
         </section>
       </main>
+      </div>
 
       <BottomNav />
     </div>

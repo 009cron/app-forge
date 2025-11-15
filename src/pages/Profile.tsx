@@ -20,12 +20,28 @@ const Profile = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background pb-20">
-      <header className="bg-background border-b border-border px-4 py-6">
-        <div className="max-w-md mx-auto text-center">
-          <h1 className="text-2xl font-bold text-primary mb-6">Sudut Kopi</h1>
-        </div>
-      </header>
+    <div 
+      className="min-h-screen pb-20 relative"
+      style={{
+        backgroundImage: "url(/background.webp)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed"
+      }}
+    >
+      <div className="absolute inset-0 bg-white/60 backdrop-blur-sm" />
+      
+      <div className="relative z-10">
+        <header className="bg-white/95 backdrop-blur-md border-b border-border px-4 py-6 shadow-soft">
+          <div className="max-w-md mx-auto text-center">
+            <img 
+              src="/logo-sudutkopi.jpg" 
+              alt="Sudut Kopi" 
+              className="h-12 w-auto object-contain mx-auto"
+            />
+          </div>
+        </header>
 
       <div className="max-w-md mx-auto px-4 py-6 space-y-6">
         <div className="bg-card rounded-2xl p-6 text-center shadow-card">
@@ -71,6 +87,7 @@ const Profile = () => {
           <LogOut className="w-5 h-5 mr-2" />
           Logout
         </Button>
+      </div>
       </div>
 
       <BottomNav />

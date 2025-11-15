@@ -10,8 +10,8 @@ interface ProductCardProps {
 
 export const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
   return (
-    <Link to={`/product/${product.id}`} className="block">
-      <div className="bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-glow transition-all duration-300">
+    <Link to={`/product/${product.id}`} className="block group">
+      <div className="bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-glow transition-all duration-300 hover:scale-105 hover:-translate-y-1">
         <div className="aspect-square overflow-hidden bg-secondary">
           <img
             src={product.image}
